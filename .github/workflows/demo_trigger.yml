@@ -6,9 +6,18 @@ on:
   pull_request:
     types:
       - opened
-    branches: [ section2 ]
+    branches:
+      - section2
+      - 'dev-*' # The single asterix means any characters other than slash
+      - 'feat/**' # the double asterix allows for further slashes as a part of the remaining name
   workflow_dispatch:
     branches: [ section2 ]
+  push:
+    branches: [ section2 ]
+    paths-ignore:
+      - '.github/workflows/*' # this means that even if other files changes, if even 1 file in the specified path changes, the action will not run
+    paths:
+      - 'src/*' # this means that the workflow will only be triggered if atleast one file from this path changes
 
 # Define the jobs that will be executed in the workflow 
 jobs:
