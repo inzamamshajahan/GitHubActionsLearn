@@ -14,10 +14,11 @@ on:
     branches: [ section2 ]
   push:
     branches: [ section2 ]
-    paths-ignore:
-      - '.github/workflows/*' # this means that even if other files changes, if even 1 file in the specified path changes, the action will not run
+    # paths-ignore:
+    #   - '.github/workflows/*' # this means that even if other files changes, if even 1 file in the specified path changes, the action will not run
     paths:
       - 'src/*' # this means that the workflow will only be triggered if atleast one file from this path changes
+      #Only one of path or path-ignore can be mentioned in a workflow file at a time
 
 # Define the jobs that will be executed in the workflow 
 jobs:
