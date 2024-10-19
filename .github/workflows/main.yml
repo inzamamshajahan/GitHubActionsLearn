@@ -22,4 +22,4 @@ jobs:
       with:
         python-version: "3.10"
     - name: Run the code  # Run the Python script
-      run: python add_numbers.py
+      run: python main.py
