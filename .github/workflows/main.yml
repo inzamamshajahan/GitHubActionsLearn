@@ -1,25 +1,39 @@
-# This workflow runs the Python code to add two numbers
-name: Python CI
-
-# Trigger the workflow on push or pull request to the main branch
+name: Python CI/CD
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-# Define the job named 'build'
 jobs:
-  build:
-    # Run the job on the latest Ubuntu environment
+  test:
     runs-on: ubuntu-latest
 
-    # Define the steps to be executed in the job
     steps:
-    - uses: actions/checkout@v3  # Checkout the code from the repository
-    - name: Set up Python 3.10  # Set up the Python environment
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: Run the code  # Run the Python script
-      run: python main.py
+    - name: Install pytest
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+    - name: Run tests
+      run: pytest
+
+  build-and-deploy:  # You can choose a more specific name like 'deploy-to-pypi' or 'deploy-to-aws'
+    needs: test  # This job depends on the 'test' job completing successfully
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Build and Deploy  # Replace with your actual build and deploy commands
+      run: |
+        echo "Building the application..."
+        # Add your build commands here, e.g., creating a package
+        echo "Deploying the application..."
+        # Add your deploy commands here, e.g., deploying to a server or a cloud platform
