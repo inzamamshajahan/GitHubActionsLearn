@@ -1,6 +1,7 @@
 """
 This module provides a function for adding two numbers.
 """
+# adding this comment to check if the pull request trigger is working or not
 
 def add_numbers(a, b):
     """
