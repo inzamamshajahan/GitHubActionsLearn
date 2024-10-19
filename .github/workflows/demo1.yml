@@ -6,7 +6,9 @@ on:
   pull_request:
     types:
       - opened
+    branches: [ section2 ]
   workflow_dispatch:
+    branches: [ section2 ]
 
 # Define the jobs that will be executed in the workflow 
 jobs:
