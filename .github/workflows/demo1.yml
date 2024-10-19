@@ -8,7 +8,7 @@ on:
       - opened
   workflow_dispatch:
 
-# Define the jobs that will be executed in the workflow
+# Define the jobs that will be executed in the workflow 
 jobs:
   # Job for linting the code using pylint
   lint:
