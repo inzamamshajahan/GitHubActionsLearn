@@ -18,7 +18,7 @@ jobs:
     # Define the steps to be executed in the job
     steps:
       # Checkout the code from the repository
-      - name: Get code from repo
+      - name: Get Code From GitHub Repo
         uses: actions/checkout@v3
       # Set up the Python environment
       - name: Set up Python 3.10
@@ -44,7 +44,8 @@ jobs:
     # Define the steps to be executed in the job
     steps:
       # Checkout the code from the repository
-      - uses: actions/checkout@v3
+      - name: Get Code From GitHub Repo
+        uses: actions/checkout@v3
       # Set up the Python environment
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
@@ -69,7 +70,8 @@ jobs:
     # Define the steps to be executed in the job
     steps:
       # Checkout the code from the repository
-      - uses: actions/checkout@v3
+      - name: Get Code From GitHub Repo
+        uses: actions/checkout@v3
       # Set up the Python environment
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
