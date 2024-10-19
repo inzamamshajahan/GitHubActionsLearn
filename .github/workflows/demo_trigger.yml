@@ -1,4 +1,4 @@
-# This workflow defines a CI/CD pipeline for a Python project
+# This workflow if for the section2 branch of the repo and not for the main branch.
 name: Events Demo
 
 # Trigger the workflow on push or pull request events to the main branch
