@@ -1,12 +1,12 @@
 # This workflow defines a CI/CD pipeline for a Python project
-name: Python CI/CD
+name: Events Demo
 
 # Trigger the workflow on push or pull request events to the main branch
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types:
+      - opened
+  workflow_dispatch:
 
 # Define the jobs that will be executed in the workflow
 jobs:
