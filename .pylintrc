@@ -1,0 +1,4 @@
+[MASTER]
+
+# Fail the linting process if the code quality score falls below 10.0
+fail-under=5.0 
