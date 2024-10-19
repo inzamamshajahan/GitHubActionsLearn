@@ -1,0 +1,25 @@
+# This workflow runs the Python code to add two numbers
+name: Python CI
+
+# Trigger the workflow on push or pull request to the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Define the job named 'build'
+jobs:
+  build:
+    # Run the job on the latest Ubuntu environment
+    runs-on: ubuntu-latest
+
+    # Define the steps to be executed in the job
+    steps:
+    - uses: actions/checkout@v3  # Checkout the code from the repository
+    - name: Set up Python 3.10  # Set up the Python environment
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Run the code  # Run the Python script
+      run: python add_numbers.py
